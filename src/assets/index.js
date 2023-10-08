@@ -20,7 +20,7 @@ import rest from "./tech/rest_api.png";
 import tradelabtech from "./company/tradelabtech.png";
 import uno_bank from "./company/uno_bank.png";
 
-import topgram from "./topgram.png";
+import topgram from "./topgram.jpg";
 
 export {
   logo,

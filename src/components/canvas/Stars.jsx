@@ -4,9 +4,6 @@ import { Preload } from '@react-three/drei'
 
 import CanvasLoader from '../Loader'
 
-import * as THREE from "three";
-
-
 const CustomGeometryParticles = (props) => {
   const { count, shape } = props;
 
@@ -82,7 +79,7 @@ const StarsCanvas = () => {
         <Suspense fallback={<CanvasLoader />}>
           <CustomGeometryParticles count={5000} shape="box" />
         </Suspense>
-        <Preload all />
+        {/* <Preload all /> */}
       </Canvas>
     </div>
   )
