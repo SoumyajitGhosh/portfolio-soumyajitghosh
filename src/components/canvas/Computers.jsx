@@ -9,7 +9,7 @@ const Computers = () => {
   return (
     <mesh>
       <hemisphereLight intensity={5} groundColor={"black"} />
-      <pointLight intensity={10} />
+      <pointLight intensity={20} />
       <spotLight
         position={[-20, 50, 10]}
         angle={0.12}
@@ -43,7 +43,7 @@ const ComputersCanvas = () => {
           minPolarAngle={Math.PI / 2}
         />
         <Computers />
-        {/* <Preload all /> */}
+        <Preload all />
       </Suspense>
     </Canvas>
   );

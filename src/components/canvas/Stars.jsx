@@ -1,8 +1,8 @@
-import React, { Suspense, useMemo, useRef } from 'react'
-import { Canvas, useFrame } from '@react-three/fiber'
-import { Preload } from '@react-three/drei'
+import React, { Suspense, useMemo, useRef } from "react";
+import { Canvas, useFrame } from "@react-three/fiber";
+// import { Preload } from "@react-three/drei";
 
-import CanvasLoader from '../Loader'
+import CanvasLoader from "../Loader";
 
 const CustomGeometryParticles = (props) => {
   const { count, shape } = props;
@@ -11,9 +11,9 @@ const CustomGeometryParticles = (props) => {
   const points = useRef();
 
   useFrame((state, delta) => {
-    points.current.rotation.x += delta / 10
-    points.current.rotation.y += delta / 15
-  })
+    points.current.rotation.x += delta / 10;
+    points.current.rotation.y += delta / 15;
+  });
 
   // Generate our positions attributes array
   const particlesPosition = useMemo(() => {
@@ -28,8 +28,6 @@ const CustomGeometryParticles = (props) => {
         positions.set([x, y, z], i * 3);
       }
     }
-
-
 
     if (shape === "sphere") {
       const distance = 1;
@@ -69,20 +67,17 @@ const CustomGeometryParticles = (props) => {
   );
 };
 
-
-
-const StarsCanvas = () => {
+const StarsCanvas = React.forwardRef((props, ref) => {
   return (
-    <div className="w-full h-full absolute inset-0 z-[-1]">
-      <Canvas
-        camera={{ position: [0, 0, .01] }}>
+    <div ref={ref} className="w-full h-full absolute inset-0 z-[-1]">
+      <Canvas camera={{ position: [0, 0, 0.01] }}>
         <Suspense fallback={<CanvasLoader />}>
           <CustomGeometryParticles count={5000} shape="box" />
         </Suspense>
-        {/* <Preload all /> */}
+        <Preload all />
       </Canvas>
     </div>
-  )
-}
+  );
+});
 
-export default StarsCanvas
+export default StarsCanvas;
