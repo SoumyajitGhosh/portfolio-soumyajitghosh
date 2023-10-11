@@ -1,6 +1,6 @@
 import React, { Suspense, useMemo, useRef } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
-// import { Preload } from "@react-three/drei";
+import { Preload } from "@react-three/drei";
 
 import CanvasLoader from "../Loader";
 
@@ -67,9 +67,9 @@ const CustomGeometryParticles = (props) => {
   );
 };
 
-const StarsCanvas = React.forwardRef((props, ref) => {
+const StarsCanvas = () => {
   return (
-    <div ref={ref} className="w-full h-full absolute inset-0 z-[-1]">
+    <div className="w-full h-full absolute inset-0 z-[-1]">
       <Canvas camera={{ position: [0, 0, 0.01] }}>
         <Suspense fallback={<CanvasLoader />}>
           <CustomGeometryParticles count={5000} shape="box" />
@@ -78,6 +78,6 @@ const StarsCanvas = React.forwardRef((props, ref) => {
       </Canvas>
     </div>
   );
-});
+};
 
 export default StarsCanvas;
