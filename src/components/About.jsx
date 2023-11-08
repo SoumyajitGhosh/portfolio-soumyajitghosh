@@ -19,7 +19,9 @@ const ServiceCard = ({ index, title, icon }) => {
           className="bg-tertiary rounded-[20px] py-5 px-12 min-h-[280px] flex justify-evenly items-center flex-col"
         >
           <img src={icon} alt={title} className="w-16 h-16 object-contain" />
-          <h3 className="text-white text-[20px] font-bold text-center">{title}</h3>
+          <h3 className="text-white text-[20px] font-bold text-center">
+            {title}
+          </h3>
         </div>
       </motion.div>
     </Tilt>
@@ -35,10 +37,12 @@ const About = () => {
       </motion.div>
 
       <motion.p variants={fadeIn("", "", 0.1, 1)}>
-        A motivated and creative individual with almost 2 years in the Software
-        Engineering domain. Passionate about maintaining a strategic approach to
-        problem-solving. Good with communicating ideas across. Three words that
-        best describe me : accountability, transparency, and punctuality.
+        Highly motivated Software Engineer with a strong background spanning
+        over two years, blending technical expertise with strategic
+        problem-solving acumen. Adept at translating complex ideas into clear,
+        concise communication. Recognized for a steadfast commitment to
+        accountability, transparent collaboration, and punctuality, embodying a
+        proactive and innovative approach to software engineering.
       </motion.p>
 
       <div className="mt-20 flex flex-wrap gap-10">
